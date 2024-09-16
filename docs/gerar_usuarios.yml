@@ -1,0 +1,54 @@
+parameters:
+  - name: quantidade
+    in: formData
+    type: integer
+    required: true
+    description: Quantidade de usuários a serem gerados (1-100)
+  - name: genero
+    in: formData
+    type: string
+    required: false
+    description: Gênero dos usuários ('male', 'female' ou 'both')
+  - name: dominio
+    in: formData
+    type: string
+    required: false
+    description: Domínio de e-mail personalizado
+responses:
+  200:
+    description: Lista de usuários gerados com sucesso
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          nome:
+            type: string
+          sobrenome:
+            type: string
+          email:
+            type: string
+          endereco:
+            type: object
+            properties:
+              rua:
+                type: string
+              cidade:
+                type: string
+              estado:
+                type: string
+              cep:
+                type: string
+          telefone:
+            type: string
+          data_nascimento:
+            type: string
+          username:
+            type: string
+  400:
+    description: Erro na requisição
+    schema:
+      type: object
+      properties:
+        erro:
+          type: string

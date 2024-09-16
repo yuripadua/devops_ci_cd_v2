@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags obrigatórias -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Fake Users</title>
+    <!-- CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Gerador de Fake Users</h1>
+        <form id="form-usuarios" class="mb-4">
+            <div class="form-group">
+                <label for="quantidade">Quantidade de usuários (1-100):</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" max="100" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" class="form-control">
+                    <option value="both">Ambos</option>
+                    <option value="male">Masculino</option>
+                    <option value="female">Feminino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dominio">Domínio de E-mail:</label>
+                <input type="text" id="dominio" name="dominio" class="form-control" placeholder="exemplo.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Gerar Fake Users</button>
+        </form>
+
+        <div id="mensagem" class="alert d-none"></div>
+
+        <h2>Usuários Gerados:</h2>
+        <ul id="lista-usuarios" class="list-group"></ul>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Seu JavaScript personalizado -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
