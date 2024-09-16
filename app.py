@@ -12,6 +12,7 @@ ruas = ["Rua A", "Avenida B", "Travessa C", "Alameda D"]
 cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre"]
 estados = ["SP", "RJ", "MG", "RS"]
 
+# Metodo que gera uma data de nascimento.
 def gerar_data_nascimento():
     # Gera uma data de nascimento aleatória entre 18 e 60 anos atrás
     start_date = datetime.now() - timedelta(days=365*60)  # 60 anos atrás
