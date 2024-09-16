@@ -24,7 +24,7 @@ def index():
     return render_template('index.html')
 
 
-
+# Método que retorna os usuarios via POST
 @app.route('/gerar_usuarios', methods=['POST'])
 def gerar_usuarios():
     try:
