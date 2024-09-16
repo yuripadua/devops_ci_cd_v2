@@ -1,4 +1,10 @@
 import pytest
+import sys
+import os
+
+# Adiciona o diretório raiz do projeto ao sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from app import app
 
 # Utilizamos o pytest.fixture para criar um cliente de teste para a aplicação Flask
